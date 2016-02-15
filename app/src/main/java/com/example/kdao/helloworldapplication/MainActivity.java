@@ -1,6 +1,7 @@
 package com.example.kdao.helloworldapplication;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBarActivity;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         createListView(); //create list
         registerClickCallBack(); //handle list item click
         createButton(); //create button
+        createViewMapButton(); //button navigate to map
     }
 
     private void createListView() {
@@ -65,19 +67,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View viewClicked, int position, long id) {
                 // ListView Clicked item index
-                int itemPosition     = position;
+                int itemPosition = position;
 
                 // ListView Clicked item value
-                String  itemValue    = (String) parent.getItemAtPosition(position);
+                String itemValue = (String) parent.getItemAtPosition(position);
 
                 // Show Alert
                 Toast.makeText(getApplicationContext(),
-                        "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
+                        "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
                         .show();
             }
         });
     }
 
+    //Button click navigate to settings page
     private void createButton() {
         //Action on button
         Button btnDoSomething = (Button) findViewById(R.id.dosomething);
@@ -89,10 +92,23 @@ public class MainActivity extends AppCompatActivity {
                 Toast mytoast = Toast.makeText(getApplicationContext(), "Button was clicked", Toast.LENGTH_SHORT);
                 mytoast.show();
                 //Navigate to setting page
-                Intent launchActivity1= new Intent(MainActivity.this, Setting.class);
+                Intent launchActivity1 = new Intent(MainActivity.this, Setting.class);
                 //Passing data among activity
                 launchActivity1.putExtra("SESSION_ID", "1234");
                 startActivity(launchActivity1);
+            }
+        });
+    }
+
+    //button click navigate to google map page
+    private void createViewMapButton() {
+        Button btnMap = (Button) findViewById(R.id.viewmap);
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "view map");
+                Intent viewMap = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(viewMap);
             }
         });
     }

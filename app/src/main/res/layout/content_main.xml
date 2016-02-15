@@ -17,9 +17,18 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do something!"
+        android:text="Go to settings!"
         android:id="@+id/dosomething"
         android:layout_below="@+id/list"
         android:layout_alignRight="@+id/list"
+        ></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View map!"
+        android:id="@+id/viewmap"
+        android:background="#0080ff"
+        android:layout_below="@+id/list"
+        android:layout_alignLeft="@+id/list"
         ></Button>
 </RelativeLayout>
