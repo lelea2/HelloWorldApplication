@@ -31,4 +31,15 @@
         android:layout_below="@+id/list"
         android:layout_alignLeft="@+id/list"
         ></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera!"
+        android:id="@+id/camera_button"
+        android:background="#0080ff"
+        android:layout_alignBaseline="@+id/viewmap"
+        android:layout_toRightOf="@+id/viewmap"
+        android:layout_marginLeft="20px"
+        ></Button>
 </RelativeLayout>

@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         registerClickCallBack(); //handle list item click
         createButton(); //create button
         createViewMapButton(); //button navigate to map
+        createCameraButton(); //navigate to camera activity
     }
 
     private void createListView() {
@@ -109,6 +110,19 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "view map");
                 Intent viewMap = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(viewMap);
+            }
+        });
+    }
+
+    //button navigate to camera page
+    private void createCameraButton() {
+        Button btnMap = (Button) findViewById(R.id.camera_button);
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "Camera action");
+                Intent cameraView = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(cameraView);
             }
         });
     }
