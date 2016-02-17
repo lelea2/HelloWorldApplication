@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         createButton(); //create button
         createViewMapButton(); //button navigate to map
         createCameraButton(); //navigate to camera activity
+        createBarCodeButton(); //Navigate to barcode view page
     }
 
     private void createListView() {
@@ -123,6 +124,19 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "Camera action");
                 Intent cameraView = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(cameraView);
+            }
+        });
+    }
+
+    //button navigate to barcode button
+    private void createBarCodeButton() {
+        Button btnBarCode = (Button) findViewById(R.id.barcode);
+        btnBarCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "Barcode action");
+                Intent barcodeView = new Intent(MainActivity.this, BarCodeActivity.class);
+                startActivity(barcodeView);
             }
         });
     }
