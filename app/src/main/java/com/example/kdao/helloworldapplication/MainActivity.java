@@ -17,6 +17,8 @@ import android.content.Intent;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ArrayAdapter;
+import android.view.Window;
+import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
     static String TAG = "MainActivity";
@@ -24,11 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.i(TAG, "Application is running, yay!");
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
         createListView(); //create list
         registerClickCallBack(); //handle list item click
         createButton(); //create button
@@ -94,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast mytoast = Toast.makeText(getApplicationContext(), "Button was clicked", Toast.LENGTH_SHORT);
                 mytoast.show();
                 //Navigate to setting page
-                Intent launchActivity1 = new Intent(MainActivity.this, Setting.class);
+                Intent launchActivity1 = new Intent(MainActivity.this, ShareActivity.class);
                 //Passing data among activity
                 launchActivity1.putExtra("SESSION_ID", "1234");
                 startActivity(launchActivity1);

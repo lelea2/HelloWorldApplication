@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffe1f0"
+    android:background="@drawable/downtown"
+    android:scaleType = "centerCrop"
+    android:alpha="0.6"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.kdao.helloworldapplication.MainActivity"
     tools:showIn="@layout/activity_main">
     <ListView
         android:id="@+id/list"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true">
     </ListView>
 
     <Button
