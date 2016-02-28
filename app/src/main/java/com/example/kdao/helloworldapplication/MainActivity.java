@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "view map");
-                Intent viewMap = new Intent(MainActivity.this, MapsActivity.class);
+                Intent viewMap = new Intent(MainActivity.this, PlaceAPIActivity.class);
                 startActivity(viewMap);
             }
         });
